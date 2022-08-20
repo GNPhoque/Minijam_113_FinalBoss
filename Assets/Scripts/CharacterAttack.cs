@@ -15,15 +15,22 @@ public class CharacterAttack : MonoBehaviour
 	private void OnEnable()
 	{
 		inputs.Attack.Melee.performed += Melee_performed;
+		inputs.Attack.Magic.performed += Magic_performed;
 		inputs.Enable();
 	}
 
 	private void OnDisable()
 	{
 		inputs.Attack.Melee.performed -= Melee_performed;
+		inputs.Attack.Magic.performed -= Magic_performed;
 	}
 
 	private void Melee_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+	{
+		attacks[0].Trigger();
+	}
+
+	private void Magic_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
 	{
 		attacks[0].Trigger();
 	}

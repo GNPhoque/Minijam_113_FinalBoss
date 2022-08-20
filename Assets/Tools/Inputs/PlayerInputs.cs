@@ -127,6 +127,33 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Magic"",
+                    ""type"": ""Button"",
+                    ""id"": ""2ae51ad7-5d31-4e8d-bf29-0b6b0fe3a4a8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DEBUG_Heal"",
+                    ""type"": ""Button"",
+                    ""id"": ""85751918-fa5c-4c16-b188-e539b859c9d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DEBUG_Damage"",
+                    ""type"": ""Button"",
+                    ""id"": ""edde4247-fefe-45ec-9b36-66bd41d46f23"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -138,6 +165,107 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Melee"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5dec1687-279c-4a94-aa85-d0d46eff9f70"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Magic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1742a39d-fe34-4f33-b112-ec75c8efa5bf"",
+                    ""path"": ""<Keyboard>/n"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DEBUG_Heal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c638940-d40d-47a4-a5f0-cdc3efc57835"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DEBUG_Damage"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""0ed93393-db65-4106-b1a7-0cc87d7c1e11"",
+            ""actions"": [
+                {
+                    ""name"": ""UP"",
+                    ""type"": ""Button"",
+                    ""id"": ""06b94339-108b-4691-8fbf-2141217a1beb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DOWN"",
+                    ""type"": ""Button"",
+                    ""id"": ""72a4a135-a611-431e-9b21-ff7f7d0fccf9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CONFIRM"",
+                    ""type"": ""Button"",
+                    ""id"": ""228cd6bc-87a0-4350-9c01-d026d07dffd6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""657e0829-0e0d-4c99-82b5-3e366574b92c"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UP"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e9b5f12-3049-4d1e-b954-5e68c66ed7f6"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DOWN"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6ccc6c1c-e081-40a2-a4a9-594d4900e5f9"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CONFIRM"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -153,6 +281,14 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         // Attack
         m_Attack = asset.FindActionMap("Attack", throwIfNotFound: true);
         m_Attack_Melee = m_Attack.FindAction("Melee", throwIfNotFound: true);
+        m_Attack_Magic = m_Attack.FindAction("Magic", throwIfNotFound: true);
+        m_Attack_DEBUG_Heal = m_Attack.FindAction("DEBUG_Heal", throwIfNotFound: true);
+        m_Attack_DEBUG_Damage = m_Attack.FindAction("DEBUG_Damage", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_UP = m_UI.FindAction("UP", throwIfNotFound: true);
+        m_UI_DOWN = m_UI.FindAction("DOWN", throwIfNotFound: true);
+        m_UI_CONFIRM = m_UI.FindAction("CONFIRM", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -254,11 +390,17 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Attack;
     private IAttackActions m_AttackActionsCallbackInterface;
     private readonly InputAction m_Attack_Melee;
+    private readonly InputAction m_Attack_Magic;
+    private readonly InputAction m_Attack_DEBUG_Heal;
+    private readonly InputAction m_Attack_DEBUG_Damage;
     public struct AttackActions
     {
         private @PlayerInputs m_Wrapper;
         public AttackActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Melee => m_Wrapper.m_Attack_Melee;
+        public InputAction @Magic => m_Wrapper.m_Attack_Magic;
+        public InputAction @DEBUG_Heal => m_Wrapper.m_Attack_DEBUG_Heal;
+        public InputAction @DEBUG_Damage => m_Wrapper.m_Attack_DEBUG_Damage;
         public InputActionMap Get() { return m_Wrapper.m_Attack; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -271,6 +413,15 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Melee.started -= m_Wrapper.m_AttackActionsCallbackInterface.OnMelee;
                 @Melee.performed -= m_Wrapper.m_AttackActionsCallbackInterface.OnMelee;
                 @Melee.canceled -= m_Wrapper.m_AttackActionsCallbackInterface.OnMelee;
+                @Magic.started -= m_Wrapper.m_AttackActionsCallbackInterface.OnMagic;
+                @Magic.performed -= m_Wrapper.m_AttackActionsCallbackInterface.OnMagic;
+                @Magic.canceled -= m_Wrapper.m_AttackActionsCallbackInterface.OnMagic;
+                @DEBUG_Heal.started -= m_Wrapper.m_AttackActionsCallbackInterface.OnDEBUG_Heal;
+                @DEBUG_Heal.performed -= m_Wrapper.m_AttackActionsCallbackInterface.OnDEBUG_Heal;
+                @DEBUG_Heal.canceled -= m_Wrapper.m_AttackActionsCallbackInterface.OnDEBUG_Heal;
+                @DEBUG_Damage.started -= m_Wrapper.m_AttackActionsCallbackInterface.OnDEBUG_Damage;
+                @DEBUG_Damage.performed -= m_Wrapper.m_AttackActionsCallbackInterface.OnDEBUG_Damage;
+                @DEBUG_Damage.canceled -= m_Wrapper.m_AttackActionsCallbackInterface.OnDEBUG_Damage;
             }
             m_Wrapper.m_AttackActionsCallbackInterface = instance;
             if (instance != null)
@@ -278,10 +429,68 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Melee.started += instance.OnMelee;
                 @Melee.performed += instance.OnMelee;
                 @Melee.canceled += instance.OnMelee;
+                @Magic.started += instance.OnMagic;
+                @Magic.performed += instance.OnMagic;
+                @Magic.canceled += instance.OnMagic;
+                @DEBUG_Heal.started += instance.OnDEBUG_Heal;
+                @DEBUG_Heal.performed += instance.OnDEBUG_Heal;
+                @DEBUG_Heal.canceled += instance.OnDEBUG_Heal;
+                @DEBUG_Damage.started += instance.OnDEBUG_Damage;
+                @DEBUG_Damage.performed += instance.OnDEBUG_Damage;
+                @DEBUG_Damage.canceled += instance.OnDEBUG_Damage;
             }
         }
     }
     public AttackActions @Attack => new AttackActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private IUIActions m_UIActionsCallbackInterface;
+    private readonly InputAction m_UI_UP;
+    private readonly InputAction m_UI_DOWN;
+    private readonly InputAction m_UI_CONFIRM;
+    public struct UIActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public UIActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @UP => m_Wrapper.m_UI_UP;
+        public InputAction @DOWN => m_Wrapper.m_UI_DOWN;
+        public InputAction @CONFIRM => m_Wrapper.m_UI_CONFIRM;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void SetCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterface != null)
+            {
+                @UP.started -= m_Wrapper.m_UIActionsCallbackInterface.OnUP;
+                @UP.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnUP;
+                @UP.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnUP;
+                @DOWN.started -= m_Wrapper.m_UIActionsCallbackInterface.OnDOWN;
+                @DOWN.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnDOWN;
+                @DOWN.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnDOWN;
+                @CONFIRM.started -= m_Wrapper.m_UIActionsCallbackInterface.OnCONFIRM;
+                @CONFIRM.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnCONFIRM;
+                @CONFIRM.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnCONFIRM;
+            }
+            m_Wrapper.m_UIActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @UP.started += instance.OnUP;
+                @UP.performed += instance.OnUP;
+                @UP.canceled += instance.OnUP;
+                @DOWN.started += instance.OnDOWN;
+                @DOWN.performed += instance.OnDOWN;
+                @DOWN.canceled += instance.OnDOWN;
+                @CONFIRM.started += instance.OnCONFIRM;
+                @CONFIRM.performed += instance.OnCONFIRM;
+                @CONFIRM.canceled += instance.OnCONFIRM;
+            }
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     public interface IMovementActions
     {
         void OnDirection(InputAction.CallbackContext context);
@@ -290,5 +499,14 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     public interface IAttackActions
     {
         void OnMelee(InputAction.CallbackContext context);
+        void OnMagic(InputAction.CallbackContext context);
+        void OnDEBUG_Heal(InputAction.CallbackContext context);
+        void OnDEBUG_Damage(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnUP(InputAction.CallbackContext context);
+        void OnDOWN(InputAction.CallbackContext context);
+        void OnCONFIRM(InputAction.CallbackContext context);
     }
 }
