@@ -5,8 +5,8 @@ using UnityEngine;
 public class UIMenu : MonoBehaviour
 {
 	[SerializeField] UIElement[] uiElements;
-	PlayerInputListener inputs;
 
+	PlayerInputListener inputs;
 	int currentElementIndex;
 
 	private void Awake()
@@ -31,14 +31,14 @@ public class UIMenu : MonoBehaviour
 	{
 		inputs.OnUiUpPressed += UP_performed;
 		inputs.OnUiDownPressed += DOWN_performed;
-		inputs.OnUiConfirmPressed += RIGHT_performed;
+		inputs.OnUiConfirmPressed += CONFIRM_performed;
 	}
 
 	private void RemoveInputEvents()
 	{
 		inputs.OnUiUpPressed -= UP_performed;
 		inputs.OnUiDownPressed -= DOWN_performed;
-		inputs.OnUiConfirmPressed -= RIGHT_performed;
+		inputs.OnUiConfirmPressed -= CONFIRM_performed;
 	}
 
 	private void UP_performed()
@@ -50,12 +50,6 @@ public class UIMenu : MonoBehaviour
 		AudioManager.instance.PlayUIMove();
 	}
 
-	private void RIGHT_performed()
-	{
-		uiElements[currentElementIndex].Activate();
-		AudioManager.instance.PlayUISelect();
-	}
-
 	private void DOWN_performed()
 	{
 		HideSelectedElementVisuals();
@@ -63,6 +57,12 @@ public class UIMenu : MonoBehaviour
 		else currentElementIndex += 1;
 		ShowSelectedElementVisuals();
 		AudioManager.instance.PlayUIMove();
+	}
+
+	private void CONFIRM_performed()
+	{
+		uiElements[currentElementIndex].Activate();
+		AudioManager.instance.PlayUISelect();
 	}
 
 	void HideSelectedElementVisuals()

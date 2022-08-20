@@ -16,44 +16,24 @@ public class CharacterMovement : MonoBehaviour
 	[SerializeField] Rigidbody2D rb;
 	[SerializeField] SpriteRenderer spriteRenderer;
 
+	bool isLookingRight;
 	bool mustJump;
 	bool stopJump;
 	Vector2 smoothInputVelocity;
 	Vector2 currentMovementVector;
 	Vector2 lastDirection;
 
-	PlayerInputs inputs;
 	Vector2 currentDirection;
 
 	#region MONOBEHAVIOUR
-	private void Awake()
-	{
-		inputs = new PlayerInputs();
-	}
-
-	private void OnEnable()
-	{
-		inputs.Movement.Direction.performed += Direction_performed;
-		inputs.Movement.Direction.canceled += Direction_performed;
-		inputs.Movement.Jump.performed += Jump_performed;
-		inputs.Movement.Jump.canceled += Jump_canceled;
-
-		inputs.Enable();
-	}
-
-	private void OnDisable()
-	{
-		inputs.Movement.Direction.performed -= Direction_performed;
-		inputs.Movement.Direction.canceled -= Direction_performed;
-	}
-
 	private void Update()
 	{
 		currentMovementVector = Vector2.SmoothDamp(currentMovementVector, currentDirection, ref smoothInputVelocity, smoothInputSpeed);
 		if (currentMovementVector != Vector2.zero) lastDirection = currentMovementVector.normalized;
 
-		if (currentMovementVector.x < 0) spriteRenderer.flipX = true;
-		else spriteRenderer.flipX = false;
+		if (currentMovementVector.x < 0) isLookingRight = false;
+		else if (currentMovementVector.x > 0) isLookingRight = true;
+		spriteRenderer.flipX = isLookingRight;
 	}
 
 	private void FixedUpdate()
@@ -76,13 +56,12 @@ public class CharacterMovement : MonoBehaviour
 	}
 	#endregion
 
-	#region EVENTS
-	private void Direction_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+	public void UpdateInput(Vector2 newInput)
 	{
-		currentDirection = obj.ReadValue<Vector2>();
+		currentDirection = newInput;
 	}
 
-	private void Jump_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+	private void Jump_performed()
 	{
 		if (IsGrounded())
 		{
@@ -90,14 +69,15 @@ public class CharacterMovement : MonoBehaviour
 		}
 	}
 
-	private void Jump_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+	private void Jump_canceled()
 	{
 		stopJump = true;
 	}
-	#endregion
 
 	bool IsGrounded()
 	{
 		return Physics2D.OverlapCircle(rb.position, .2f, groundLayer);
 	}
+
+	public bool IsLookingRight => isLookingRight;
 }

@@ -24,22 +24,31 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputs"",
     ""maps"": [
         {
-            ""name"": ""Movement"",
-            ""id"": ""c309ea8e-0cfe-4618-b4eb-908fb123246d"",
+            ""name"": ""UI"",
+            ""id"": ""0ed93393-db65-4106-b1a7-0cc87d7c1e11"",
             ""actions"": [
                 {
-                    ""name"": ""Direction"",
-                    ""type"": ""Value"",
-                    ""id"": ""8944ebbe-3e9e-42a2-9c25-5618dc98bd18"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""UP"",
+                    ""type"": ""Button"",
+                    ""id"": ""06b94339-108b-4691-8fbf-2141217a1beb"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Jump"",
+                    ""name"": ""DOWN"",
                     ""type"": ""Button"",
-                    ""id"": ""a1fa0ea0-6120-4bb6-9ffc-b50e9619d4f7"",
+                    ""id"": ""72a4a135-a611-431e-9b21-ff7f7d0fccf9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CONFIRM"",
+                    ""type"": ""Button"",
+                    ""id"": ""228cd6bc-87a0-4350-9c01-d026d07dffd6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -48,68 +57,57 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""9b397517-c7f8-4327-bb5f-471abb37cfc0"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Direction"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""c4ad92e1-5fec-48d8-ba40-d16a230a1e29"",
+                    ""name"": """",
+                    ""id"": ""657e0829-0e0d-4c99-82b5-3e366574b92c"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Direction"",
+                    ""action"": ""UP"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""8ca98fed-6a24-4b7d-bdc6-cf954a64a9ab"",
+                    ""name"": """",
+                    ""id"": ""63bd5c81-9f28-487d-9a44-bb99b603679f"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UP"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e9b5f12-3049-4d1e-b954-5e68c66ed7f6"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Direction"",
+                    ""action"": ""DOWN"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""ceac1396-1eed-41e7-a9b5-289e802d910a"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Direction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""648dc147-c5ae-4697-ad2d-d3202cdea9f0"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Direction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a54c2154-c9fb-418c-9e02-6087b98b61c5"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""4c16543b-8d2e-4403-8f54-f4f505f2620d"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
+                    ""action"": ""DOWN"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6ccc6c1c-e081-40a2-a4a9-594d4900e5f9"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CONFIRM"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -204,31 +202,22 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""UI"",
-            ""id"": ""0ed93393-db65-4106-b1a7-0cc87d7c1e11"",
+            ""name"": ""Movement"",
+            ""id"": ""c309ea8e-0cfe-4618-b4eb-908fb123246d"",
             ""actions"": [
                 {
-                    ""name"": ""UP"",
-                    ""type"": ""Button"",
-                    ""id"": ""06b94339-108b-4691-8fbf-2141217a1beb"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""Direction"",
+                    ""type"": ""Value"",
+                    ""id"": ""8944ebbe-3e9e-42a2-9c25-5618dc98bd18"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""DOWN"",
+                    ""name"": ""Jump"",
                     ""type"": ""Button"",
-                    ""id"": ""72a4a135-a611-431e-9b21-ff7f7d0fccf9"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""CONFIRM"",
-                    ""type"": ""Button"",
-                    ""id"": ""228cd6bc-87a0-4350-9c01-d026d07dffd6"",
+                    ""id"": ""a1fa0ea0-6120-4bb6-9ffc-b50e9619d4f7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -237,35 +226,123 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
-                    ""id"": ""657e0829-0e0d-4c99-82b5-3e366574b92c"",
+                    ""name"": ""WASD"",
+                    ""id"": ""9b397517-c7f8-4327-bb5f-471abb37cfc0"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Direction"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""c4ad92e1-5fec-48d8-ba40-d16a230a1e29"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UP"",
+                    ""action"": ""Direction"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""7e9b5f12-3049-4d1e-b954-5e68c66ed7f6"",
+                    ""name"": ""down"",
+                    ""id"": ""8ca98fed-6a24-4b7d-bdc6-cf954a64a9ab"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DOWN"",
+                    ""action"": ""Direction"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""6ccc6c1c-e081-40a2-a4a9-594d4900e5f9"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""name"": ""left"",
+                    ""id"": ""ceac1396-1eed-41e7-a9b5-289e802d910a"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CONFIRM"",
+                    ""action"": ""Direction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""648dc147-c5ae-4697-ad2d-d3202cdea9f0"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Direction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""ARROWS"",
+                    ""id"": ""8909ccb0-f9d9-41db-a9fb-46f53a4ff17b"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Direction"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""3ea59e39-c88d-4e37-9ca0-526959fdc4d3"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Direction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""f10813be-f42e-4275-9e17-44f58b2832a6"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Direction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""572f6933-d972-4c86-b759-2ab979f92613"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Direction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""e319136a-68a7-4282-8bcf-391316dd2605"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Direction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a54c2154-c9fb-418c-9e02-6087b98b61c5"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -274,21 +351,21 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Movement
-        m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
-        m_Movement_Direction = m_Movement.FindAction("Direction", throwIfNotFound: true);
-        m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_UP = m_UI.FindAction("UP", throwIfNotFound: true);
+        m_UI_DOWN = m_UI.FindAction("DOWN", throwIfNotFound: true);
+        m_UI_CONFIRM = m_UI.FindAction("CONFIRM", throwIfNotFound: true);
         // Attack
         m_Attack = asset.FindActionMap("Attack", throwIfNotFound: true);
         m_Attack_Melee = m_Attack.FindAction("Melee", throwIfNotFound: true);
         m_Attack_Magic = m_Attack.FindAction("Magic", throwIfNotFound: true);
         m_Attack_DEBUG_Heal = m_Attack.FindAction("DEBUG_Heal", throwIfNotFound: true);
         m_Attack_DEBUG_Damage = m_Attack.FindAction("DEBUG_Damage", throwIfNotFound: true);
-        // UI
-        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_UP = m_UI.FindAction("UP", throwIfNotFound: true);
-        m_UI_DOWN = m_UI.FindAction("DOWN", throwIfNotFound: true);
-        m_UI_CONFIRM = m_UI.FindAction("CONFIRM", throwIfNotFound: true);
+        // Movement
+        m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
+        m_Movement_Direction = m_Movement.FindAction("Direction", throwIfNotFound: true);
+        m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -345,46 +422,54 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Movement
-    private readonly InputActionMap m_Movement;
-    private IMovementActions m_MovementActionsCallbackInterface;
-    private readonly InputAction m_Movement_Direction;
-    private readonly InputAction m_Movement_Jump;
-    public struct MovementActions
+    // UI
+    private readonly InputActionMap m_UI;
+    private IUIActions m_UIActionsCallbackInterface;
+    private readonly InputAction m_UI_UP;
+    private readonly InputAction m_UI_DOWN;
+    private readonly InputAction m_UI_CONFIRM;
+    public struct UIActions
     {
         private @PlayerInputs m_Wrapper;
-        public MovementActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Direction => m_Wrapper.m_Movement_Direction;
-        public InputAction @Jump => m_Wrapper.m_Movement_Jump;
-        public InputActionMap Get() { return m_Wrapper.m_Movement; }
+        public UIActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @UP => m_Wrapper.m_UI_UP;
+        public InputAction @DOWN => m_Wrapper.m_UI_DOWN;
+        public InputAction @CONFIRM => m_Wrapper.m_UI_CONFIRM;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MovementActions set) { return set.Get(); }
-        public void SetCallbacks(IMovementActions instance)
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void SetCallbacks(IUIActions instance)
         {
-            if (m_Wrapper.m_MovementActionsCallbackInterface != null)
+            if (m_Wrapper.m_UIActionsCallbackInterface != null)
             {
-                @Direction.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnDirection;
-                @Direction.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnDirection;
-                @Direction.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnDirection;
-                @Jump.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnJump;
+                @UP.started -= m_Wrapper.m_UIActionsCallbackInterface.OnUP;
+                @UP.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnUP;
+                @UP.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnUP;
+                @DOWN.started -= m_Wrapper.m_UIActionsCallbackInterface.OnDOWN;
+                @DOWN.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnDOWN;
+                @DOWN.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnDOWN;
+                @CONFIRM.started -= m_Wrapper.m_UIActionsCallbackInterface.OnCONFIRM;
+                @CONFIRM.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnCONFIRM;
+                @CONFIRM.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnCONFIRM;
             }
-            m_Wrapper.m_MovementActionsCallbackInterface = instance;
+            m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Direction.started += instance.OnDirection;
-                @Direction.performed += instance.OnDirection;
-                @Direction.canceled += instance.OnDirection;
-                @Jump.started += instance.OnJump;
-                @Jump.performed += instance.OnJump;
-                @Jump.canceled += instance.OnJump;
+                @UP.started += instance.OnUP;
+                @UP.performed += instance.OnUP;
+                @UP.canceled += instance.OnUP;
+                @DOWN.started += instance.OnDOWN;
+                @DOWN.performed += instance.OnDOWN;
+                @DOWN.canceled += instance.OnDOWN;
+                @CONFIRM.started += instance.OnCONFIRM;
+                @CONFIRM.performed += instance.OnCONFIRM;
+                @CONFIRM.canceled += instance.OnCONFIRM;
             }
         }
     }
-    public MovementActions @Movement => new MovementActions(this);
+    public UIActions @UI => new UIActions(this);
 
     // Attack
     private readonly InputActionMap m_Attack;
@@ -443,58 +528,51 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     }
     public AttackActions @Attack => new AttackActions(this);
 
-    // UI
-    private readonly InputActionMap m_UI;
-    private IUIActions m_UIActionsCallbackInterface;
-    private readonly InputAction m_UI_UP;
-    private readonly InputAction m_UI_DOWN;
-    private readonly InputAction m_UI_CONFIRM;
-    public struct UIActions
+    // Movement
+    private readonly InputActionMap m_Movement;
+    private IMovementActions m_MovementActionsCallbackInterface;
+    private readonly InputAction m_Movement_Direction;
+    private readonly InputAction m_Movement_Jump;
+    public struct MovementActions
     {
         private @PlayerInputs m_Wrapper;
-        public UIActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @UP => m_Wrapper.m_UI_UP;
-        public InputAction @DOWN => m_Wrapper.m_UI_DOWN;
-        public InputAction @CONFIRM => m_Wrapper.m_UI_CONFIRM;
-        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public MovementActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Direction => m_Wrapper.m_Movement_Direction;
+        public InputAction @Jump => m_Wrapper.m_Movement_Jump;
+        public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
-        public void SetCallbacks(IUIActions instance)
+        public static implicit operator InputActionMap(MovementActions set) { return set.Get(); }
+        public void SetCallbacks(IMovementActions instance)
         {
-            if (m_Wrapper.m_UIActionsCallbackInterface != null)
+            if (m_Wrapper.m_MovementActionsCallbackInterface != null)
             {
-                @UP.started -= m_Wrapper.m_UIActionsCallbackInterface.OnUP;
-                @UP.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnUP;
-                @UP.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnUP;
-                @DOWN.started -= m_Wrapper.m_UIActionsCallbackInterface.OnDOWN;
-                @DOWN.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnDOWN;
-                @DOWN.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnDOWN;
-                @CONFIRM.started -= m_Wrapper.m_UIActionsCallbackInterface.OnCONFIRM;
-                @CONFIRM.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnCONFIRM;
-                @CONFIRM.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnCONFIRM;
+                @Direction.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnDirection;
+                @Direction.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnDirection;
+                @Direction.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnDirection;
+                @Jump.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnJump;
             }
-            m_Wrapper.m_UIActionsCallbackInterface = instance;
+            m_Wrapper.m_MovementActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @UP.started += instance.OnUP;
-                @UP.performed += instance.OnUP;
-                @UP.canceled += instance.OnUP;
-                @DOWN.started += instance.OnDOWN;
-                @DOWN.performed += instance.OnDOWN;
-                @DOWN.canceled += instance.OnDOWN;
-                @CONFIRM.started += instance.OnCONFIRM;
-                @CONFIRM.performed += instance.OnCONFIRM;
-                @CONFIRM.canceled += instance.OnCONFIRM;
+                @Direction.started += instance.OnDirection;
+                @Direction.performed += instance.OnDirection;
+                @Direction.canceled += instance.OnDirection;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
             }
         }
     }
-    public UIActions @UI => new UIActions(this);
-    public interface IMovementActions
+    public MovementActions @Movement => new MovementActions(this);
+    public interface IUIActions
     {
-        void OnDirection(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
+        void OnUP(InputAction.CallbackContext context);
+        void OnDOWN(InputAction.CallbackContext context);
+        void OnCONFIRM(InputAction.CallbackContext context);
     }
     public interface IAttackActions
     {
@@ -503,10 +581,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         void OnDEBUG_Heal(InputAction.CallbackContext context);
         void OnDEBUG_Damage(InputAction.CallbackContext context);
     }
-    public interface IUIActions
+    public interface IMovementActions
     {
-        void OnUP(InputAction.CallbackContext context);
-        void OnDOWN(InputAction.CallbackContext context);
-        void OnCONFIRM(InputAction.CallbackContext context);
+        void OnDirection(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }

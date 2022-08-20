@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Attack : ScriptableObject
 {
-	public abstract void Trigger();
+	public abstract void Trigger(Vector2 sourcePosition, Vector2 direction, Vector2 targetPosition);
 }

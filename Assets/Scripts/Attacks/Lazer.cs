@@ -7,12 +7,16 @@ public class Lazer : Attack
 {
 	[SerializeField] Transform lazerIndicatorPrefab;
 	[SerializeField] Transform lazerPrefab;
+	[SerializeField] float spawnOffset;
+	Vector3 spawnPos;
 
-	public override void Trigger()
+	public override void Trigger(Vector2 sourcePosition, Vector2 direction, Vector2 targetPosition)
 	{
-		Transform indicator = Instantiate(lazerIndicatorPrefab);
+		spawnPos = sourcePosition + direction * spawnOffset;
+		Transform indicator = Instantiate(lazerIndicatorPrefab, spawnPos, Quaternion.identity);
 		StaticMonobehaviour.instance.StartCoroutine(IncreaseWidth(indicator));
 	}
+
 
 	IEnumerator IncreaseWidth(Transform indicator)
 	{
@@ -28,7 +32,7 @@ public class Lazer : Attack
 			indicator.localScale = newScale;
 		}
 		Destroy(indicator.gameObject);
-		Transform lazer = Instantiate(lazerPrefab);
+		Transform lazer = Instantiate(lazerPrefab, spawnPos, Quaternion.identity);
 		Destroy(lazer.gameObject, 1f);
 	}
 }

@@ -33,7 +33,6 @@ public class PlayerInputListener : InputListener
 		inputs.Attack.DEBUG_Damage.performed += DEBUG_Damage_performed;
 		inputs.Attack.DEBUG_Heal.performed += DEBUG_Heal_performed;
 
-		inputs.Enable();
 	}
 
 	private void OnDisable()
